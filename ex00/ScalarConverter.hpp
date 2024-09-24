@@ -43,12 +43,13 @@ bool checkchar(std::string input);
 bool checkint(std::string input);
 bool checkdouble(std::string input);
 bool checkfloat(std::string input);
+bool checkpseudo(std::string input);
 
+void convertPseudo(std::string input);
 void convertChar(std::string input);
 void convertInt(std::string input);
 void convertDouble(std::string input);
 void convertFloat(std::string input);
-
 
 
 #endif
