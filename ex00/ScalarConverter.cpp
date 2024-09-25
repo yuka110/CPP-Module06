@@ -16,6 +16,7 @@ ScalarConverter& ScalarConverter::operator=(const ScalarConverter& s){
 
 void    ScalarConverter::convert(std::string input)
 {
+    std::cout << std::fixed;
     if (checkpseudo(input) == true)
         convertPseudo(input);
     else if (checkchar(input) == true)
@@ -88,8 +89,8 @@ void convertChar(std::string input)
     else
         std::cout << "char: '" << c << "'"<< std::endl;
     std::cout << "int: " << static_cast<int>(c) << std::endl;
-    std::cout << "float: " << static_cast<float>(c) << std::endl;
-    std::cout << "double: " << static_cast<double>(c) << std::endl;
+    std::cout << "float: " << std::setprecision(1) << static_cast<float>(c) << "f" << std::endl;
+    std::cout << "double: " << std::setprecision(1) << static_cast<double>(c) << std::endl;
 }
 
 void convertFloat(std::string input)
@@ -101,14 +102,14 @@ void convertFloat(std::string input)
         else
             std::cout << "char: '" << static_cast<char>(f) << "'"<< std::endl;
         std::cout << "int: " << static_cast<int>(f) << std::endl;
-        std::cout << "float: " << f << std::endl;
-        std::cout << "double: " << static_cast<double>(f) << std::endl;
+        std::cout << "float: " << std::setprecision(1) << f << "f" << std::endl;
+        std::cout << "double: " << std::setprecision(1) << static_cast<double>(f) << std::endl;
     }
     catch (const std::invalid_argument & e) {
-            std::cout << e.what() << std::endl;
+            std::cout << RED << "Error: Invalid Argument" << RESET << std::endl;
     }
     catch (const std::out_of_range & e) {
-        std::cout << e.what() << std::endl;
+        std::cout << RED << "Error: Out of range" << RESET << std::endl;
     }
 
 }
@@ -122,14 +123,14 @@ void convertDouble(std::string input)
         else
             std::cout << "char: '" << static_cast<char>(d) << "'"<< std::endl;
         std::cout << "int: " << static_cast<int>(d) << std::endl;
-        std::cout << "float: " << static_cast<float>(d) << std::endl;
-        std::cout << "double: " << d << std::endl;
+        std::cout << "float: " << std::setprecision(1) << static_cast<float>(d) << "f" << std::endl;
+        std::cout << "double: " << std::setprecision(1) << d << std::endl;
     }
     catch (const std::invalid_argument & e) {
-            std::cout << e.what() << std::endl;
+            std::cout << RED << "Error: Invalid Argument" << RESET << std::endl;
     }
     catch (const std::out_of_range & e) {
-        std::cout << e.what() << std::endl;
+        std::cout << RED << "Error: Out of range" << RESET << std::endl;
     }
 
 }
@@ -143,13 +144,13 @@ void convertInt(std::string input)
         else
             std::cout << "char: '" << static_cast<char>(i) << "'"<< std::endl;
         std::cout << "int: " << i << std::endl;
-        std::cout << "float: " << static_cast<float>(i) << std::endl;
-        std::cout << "double: " << static_cast<double>(i) << std::endl;    
+        std::cout << "float: " << std::setprecision(1) << static_cast<float>(i) << "f" << std::endl;
+        std::cout << "double: " << std::setprecision(1) << static_cast<double>(i) << std::endl;    
     }
     catch (const std::invalid_argument & e) {
-            std::cout << e.what() << std::endl;
+            std::cout << RED << "Error: Invalid Argument" << RESET << std::endl;
     }
     catch (const std::out_of_range & e) {
-        std::cout << e.what() << std::endl;
+        std::cout << RED << "Error: Out of range" << RESET << std::endl;
     }
 }

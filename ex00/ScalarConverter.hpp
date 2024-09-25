@@ -6,6 +6,7 @@
 #include <cctype>
 #include <cstring>
 #include <stdexcept>
+#include <iomanip>
 
 #define BOLD_TEXT "\033[1m"
 #define RESET "\033[0m"
