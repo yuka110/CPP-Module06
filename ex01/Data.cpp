@@ -1,6 +1,6 @@
 #include "Data.hpp"
 
-Data::Data(){}
+Data::Data() : nb(100){}
 
 Data::Data(int number) : nb(number) {}
 

@@ -16,10 +16,12 @@ Serializer& Serializer::operator=(const Serializer& s){
 
 uintptr_t Serializer::serialize(Data* ptr){
     uintptr_t newPtr = reinterpret_cast<uintptr_t>(ptr);
+    //  std::cout << "serializer has type: " << typeid(newPtr).name() << '\n';
     return (newPtr);
 }
 
 Data* Serializer::deserialize(uintptr_t raw){
     Data* newData = reinterpret_cast<Data*>(raw);
+    //  std::cout << "deserializer has type: " << typeid(newData).name() << '\n';
     return (newData);
 }
